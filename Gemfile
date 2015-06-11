@@ -24,9 +24,21 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# allows for the local server to show changes to files without rerunning it
+gem 'shotgun'
 
+# will be used to automate the creation of forms
 gem 'simple_form'
+
+# will be used to automate javascript validation of forms
 gem 'client_side_validations'
+
+# this is a the frontend framework we would like to use to make default layouts
+gem 'zurb-foundation'
+gem "compass-rails", git: 'https://github.com/Compass/compass-rails', branch: 'master'
+gem 'foundation-rails'
+gem 'thin'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
