@@ -1,0 +1,21 @@
+
+<%= simple_form_for @tsighting, :validate => true do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :x_coord %>
+    <%= f.input :y_coord %>
+    <%= f.input :date, as: :date %>
+    <%= f.input :your_name %>
+    <%= f.input :contact_info %>
+    <%= f.input :catchment %>
+    <%= f.input :river %>
+    <%= f.input :no_of_minks, as: :integer %>
+    <%= f.input :status, as: :boolean, checked_value: true, unchecked_value: false %>
+    <%= f.input :comments, as: :text %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

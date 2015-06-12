@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tsightings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>X coord</th>
+      <th>Y coord</th>
+      <th>Date</th>
+      <th>Your name</th>
+      <th>Contact info</th>
+      <th>Catchment</th>
+      <th>River</th>
+      <th>No of minks</th>
+      <th>Status</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tsightings.each do |tsighting| %>
+      <tr>
+        <td><%= tsighting.x_coord %></td>
+        <td><%= tsighting.y_coord %></td>
+        <td><%= tsighting.date %></td>
+        <td><%= tsighting.your_name %></td>
+        <td><%= tsighting.contact_info %></td>
+        <td><%= tsighting.catchment %></td>
+        <td><%= tsighting.river %></td>
+        <td><%= tsighting.no_of_minks %></td>
+        <td><%= tsighting.status %></td>
+        <td><%= tsighting.comments %></td>
+        <td><%= link_to 'Show', tsighting %></td>
+        <td><%= link_to 'Edit', edit_tsighting_path(tsighting) %></td>
+        <td><%= link_to 'Destroy', tsighting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tsighting', new_tsighting_path %>
