@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>X coord:</strong>
+  <%= @tsighting.x_coord %>
+</p>
+
+<p>
+  <strong>Y coord:</strong>
+  <%= @tsighting.y_coord %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @tsighting.date %>
+</p>
+
+<p>
+  <strong>Your name:</strong>
+  <%= @tsighting.your_name %>
+</p>
+
+<p>
+  <strong>Contact info:</strong>
+  <%= @tsighting.contact_info %>
+</p>
+
+<p>
+  <strong>Catchment:</strong>
+  <%= @tsighting.catchment %>
+</p>
+
+<p>
+  <strong>River:</strong>
+  <%= @tsighting.river %>
+</p>
+
+<p>
+  <strong>No of minks:</strong>
+  <%= @tsighting.no_of_minks %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @tsighting.status %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @tsighting.comments %>
+</p>
+
+<%= link_to 'Edit', edit_tsighting_path(@tsighting) %> |
+<%= link_to 'Back', tsightings_path %>
