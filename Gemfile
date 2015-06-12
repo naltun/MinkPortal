@@ -31,7 +31,7 @@ gem 'shotgun'
 gem 'simple_form'
 
 # will be used to automate javascript validation of forms
-gem 'client_side_validations'
+#gem 'client_side_validations'
 
 # this is a the frontend framework we would like to use to make default layouts
 gem 'zurb-foundation'
