@@ -5,16 +5,27 @@
   margin: 2px 10px;
 }
 
-
 .simple_form div.input {
   margin-bottom: 10px;
   width: 100px;
 }
 
+
+.simple_form textarea {
+  margin-bottom: 10px;
+  width: 500px;
+  height: 200px;
+}
+
+.simple_form div.input.text {
+  margin-bottom: 10px;
+  width: 500px;
+}
+
+
 .simple_form div.input.date {
   margin-bottom: 10px;
-  width: 300px;
-  display: block;
+  width: 100px;
 }
 
 .simple_form div.boolean, .simple_form input[type='submit'] {
@@ -27,8 +38,16 @@
 }
 
 .simple_form label.collection_radio {
+  float: left;
   margin-right: 10px;
   margin-left: 2px;
+}
+
+.simple_form select {
+  display: block;
+  margin-right: 10px;
+  margin-left: 2px;
+
 }
 
 .simple_form .error {

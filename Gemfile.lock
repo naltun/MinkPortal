@@ -1,4 +1,20 @@
 GIT
+  remote: git://github.com/derekprior/momentjs-rails.git
+  revision: e02512db27ff9fc25a8856ef5a9830d97ce8e818
+  specs:
+    momentjs-rails (2.10.3)
+      railties (>= 3.1)
+
+GIT
+  remote: git://github.com/zpaulovics/datetimepicker-rails.git
+  revision: 36d21cec5da7f5b214925804f60e63c61c747023
+  branch: master
+  submodules: true
+  specs:
+    datetimepicker-rails (4.7.16)
+      momentjs-rails (>= 2.9.0)
+
+GIT
   remote: https://github.com/Compass/compass-rails
   revision: 3e88f991150ffa39b0a539dffb3326248d18e6ad
   branch: master
@@ -215,9 +231,11 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   compass-rails!
+  datetimepicker-rails!
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
+  momentjs-rails (>= 2.8.1)!
   pg
   puma
   rails (= 4.2.0)
