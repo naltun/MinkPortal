@@ -15,5 +15,9 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
+//= require moment
+//= require bootstrap-datetimepicker
+//= require pickers
 
 $(function(){ $(document).foundation(); });
+$("input.date_picker").datepicker();

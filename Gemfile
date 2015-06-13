@@ -30,6 +30,9 @@ gem 'shotgun'
 # will be used to automate the creation of forms
 gem 'simple_form'
 
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+gem 'momentjs-rails', '>= 2.8.1', :github => 'derekprior/momentjs-rails'
+
 # will be used to automate javascript validation of forms
 #gem 'client_side_validations'
 
