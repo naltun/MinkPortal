@@ -43,12 +43,13 @@ ActiveRecord::Schema.define(version: 20150617134748) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email"
-    t.string   "password"
-    t.string   "affiliation"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
+  # Check about removing this table
+  # create_table "users", force: :cascade do |t|
+  #   t.string   "email"
+  #   t.string   "password"
+  #   t.string   "affiliation"
+  #   t.datetime "created_at",  null: false
+  #   t.datetime "updated_at",  null: false
+  # end
 
 end
