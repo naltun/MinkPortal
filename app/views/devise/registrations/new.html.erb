@@ -7,6 +7,11 @@
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
+	<p>
+	  <%= f.label :role %><br />
+	  <%= f.collection_select :role, User::ROLES, :to_s, :titleize %>
+	</p>
+
   </div>
 
   <div class="form-actions">

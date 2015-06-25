@@ -3,4 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+   ROLES = %w[admin moderator author]
+   
+   def role_symbols
+   	[role.to_sym]
+   end      
 end

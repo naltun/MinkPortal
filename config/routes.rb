@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   
   get '/about', to: 'static#about'
   get '/sform', to: 'static#sform'
+  get '/signup', to: 'user#new'
 
 end

@@ -19,6 +19,7 @@ gem 'foundation-rails'
 gem 'thin'
 gem 'pry'
 gem 'devise'
+gem 'cancancan'
 #gem 'client_side_validations'
 
 group :development, :test do
