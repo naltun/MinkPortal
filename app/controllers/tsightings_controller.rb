@@ -1,5 +1,6 @@
 class TsightingsController < ApplicationController
   before_action :set_tsighting, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /tsightings
   # GET /tsightings.json
