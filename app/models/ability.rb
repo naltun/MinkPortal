@@ -33,23 +33,25 @@
 
 class Ability
   include CanCan::Ability
-  
-  def initialize(user)
-    user ||= User.new # guest user
+  #def initialize(current_user) current_contact ||= Contact.create(:role => 'visitor')
+  def initialize(current_user)
+  #current_user ||= User.new # guest user
     
-    if user.role?(:admin)
+    if current_user.role? == :admin
       can :manage, :all
+      can :update, Tsighting
 
-    elsif user.role?(:ft)
+    elsif current_user.role? == :ft
       can :read, :all
       can :create, User
       can :update, User do |u|
-        u.try(:user) == user || user.role?(:ft)
+        u.try(:user) == current_user || current_user.role?(:ft)
       end
 
-    elsif user.role?(:volunteer)
+    elsif current_user.role? == :volunteer
       can :read, :all
-      can :create, Tsighting # Figure out
+      can :update, Tsighting
+      cannot :create, Tsighting # Figure out
     
     else
       can :read, :all  

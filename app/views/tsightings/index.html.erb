@@ -33,8 +33,12 @@
         <td><%= tsighting.status %></td>
         <td><%= tsighting.comments %></td>
         <td><%= link_to 'Show', tsighting %></td>
-        <td><%= link_to 'Edit', edit_tsighting_path(tsighting) %></td>
-        <td><%= link_to 'Destroy', tsighting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :manage, :all %>
+          <td><%= link_to 'Edit', edit_tsighting_path(tsighting) %></td>
+        <% end %>
+        <% if can? :destroy, @tsighting %>
+          <td><%= link_to 'Destroy', tsighting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-   ROLES = %w[admin moderator author]
+   ROLES = %w[admin ft volunteer]
    
    def role_symbols
    	[role.to_sym]

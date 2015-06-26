@@ -36,15 +36,21 @@
     </ul>
     <!-- Left Nav Section -->
     <ul class="left">
-      
+      <% if user_signed_in? %>
+        <p>Signed in as <%= current_user.email %>. Not you?</p>
+        <li class="active"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li class="active"><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %></li>
+      <% end %>
     </ul>
   </section>
 </nav>
 
 <!-- sample navbar finishes here -->
   <div class="row">
+  <div class="large-2 columns"></div>
     <div class="large-8 columns"><%= yield %></div>
-    <div class="large-4 columns">
+    <div class="large-2 columns">
     <h3>Login</h3>
     <p>
        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sem arcu, vulputate eget porttitor vel, fermentum in ante. Nullam ut volutpat enim, nec venenatis nibh. Duis vehicula nibh sed libero vulputate accumsan. Nunc et augue a libero finibus interdum. Aliquam erat volutpat. Phasellus sed risus lorem. Vestibulum cursus sit amet sem vel congue. Suspendisse quis neque mattis, dapibus ex ut, posuere ante. Vestibulum hendrerit arcu sed eros tincidunt lacinia.
