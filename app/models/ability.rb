@@ -50,12 +50,18 @@ class Ability
       end
 
     elsif current_user.role == "volunteer"
-      can :read, :all
-      can :update, Tsighting
-      cannot :create, Tsighting # Figure out.
-    
+      can :read, Tsighting do |s|
+        s.try(:user) == current_user || current_user.role = "volunteer"
+      end
+      can :update, Tsighting do |s|
+        s.try(:user) == current_user || current_user.role = "volunteer"
+      end
+      can :create, Tsighting do |s|
+        s.try(:user) == current_user || current_user.role = "volunteer"
+      end
+
     else
-      cannot :create, Tsighting
+      can :create, Tsighting
       cannot :create, User
     end
   end
