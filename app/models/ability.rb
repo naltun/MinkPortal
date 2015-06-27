@@ -30,6 +30,7 @@
 #     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 #   end
 # end
+require 'pry'
 
 class Ability
   include CanCan::Ability
@@ -37,9 +38,9 @@ class Ability
   def initialize(current_user)
   #current_user ||= User.new # guest user
     
-    if current_user.role? == :admin
+    #binding.pry
+    if current_user.role == :admin
       can :manage, :all
-      can :update, Tsighting
 
     elsif current_user.role? == :ft
       can :read, :all
@@ -51,7 +52,7 @@ class Ability
     elsif current_user.role? == :volunteer
       can :read, :all
       can :update, Tsighting
-      cannot :create, Tsighting # Figure out
+      cannot :create, Tsighting # Figure outu.
     
     else
       can :read, :all  

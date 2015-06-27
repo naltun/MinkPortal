@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
    ROLES = %w[admin ft volunteer]
    
-   def role_symbols
-   	[role.to_sym]
-   end      
+    def role_symbols
+    	[role.to_sym]
+    end      
 end

@@ -1,5 +1,5 @@
 class TsightingsController < ApplicationController
-  before_action :set_tsighting, only: [:show, :edit, :update, :destroy]
+  #before_action :set_tsighting, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
   # GET /tsightings
@@ -64,9 +64,9 @@ class TsightingsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_tsighting
-      @tsighting = Tsighting.find(params[:id])
-    end
+    #def set_tsighting
+     # @tsighting = Tsighting.find(params[:id])
+    #end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tsighting_params
