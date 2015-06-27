@@ -31,7 +31,7 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class="active"><%= link_to "Report sighting", sform_path %></li>
+      <li class="active"><%= link_to "Report sighting", new_sighting_path %></li>
       <li class="active"><%= link_to "About", about_path %></li>
     </ul>
     <!-- Left Nav Section -->
@@ -40,7 +40,7 @@
         <p>Signed in as <%= current_user.email %>. Not you?</p>
         <li class="active"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
       <% else %>
-        <li class="active"><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %></li>
+        <li class="active"><%= link_to "Sign in", new_user_session_path %></li>
       <% end %>
     </ul>
   </section>
