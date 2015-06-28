@@ -10,3 +10,4 @@ class User < ActiveRecord::Base
     	[role.to_sym]
     end      
 end
+ 
