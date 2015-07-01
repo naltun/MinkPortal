@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "user/registrations" }
   resources :tsightings
-  resources :test_sightings
+  #resources :test_sightings
 
   root 'static#home'
   

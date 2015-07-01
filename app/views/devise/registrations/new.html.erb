@@ -11,7 +11,7 @@
 	  <%= f.label :role %><br />
 	  <%= f.collection_select :role, User::ROLES, :to_s, :titleize %>
 	</p>
-
+  <%= binding.pry %>
   </div>
 
   <div class="form-actions">

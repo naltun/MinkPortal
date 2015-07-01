@@ -50,6 +50,7 @@ class Ability
       end
 
     elsif current_user.role == "volunteer"
+      cannot :create, User
       can :read, Tsighting do |s|
         s.try(:user) == current_user || current_user.role = "volunteer"
       end
@@ -59,6 +60,7 @@ class Ability
       can :create, Tsighting do |s|
         s.try(:user) == current_user || current_user.role = "volunteer"
       end
+
 
     else
       can :create, Tsighting
