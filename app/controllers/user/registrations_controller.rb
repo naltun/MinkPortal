@@ -15,7 +15,7 @@ class User::RegistrationsController < Devise::RegistrationsController
           redirect_to root_path, :alert => 'Access Denied'
         else
          build_resource({})
-      #   set_minimum_password_length
+         set_minimum_password_length
          yield resource if block_given?
          respond_with self.resource
         end
@@ -26,9 +26,8 @@ class User::RegistrationsController < Devise::RegistrationsController
   # def create
   #   build_resource(sign_up_params)
   #   # next line should resolve problems on creating a user by another, but doesn't work
-  #   devise_parameter_sanitizer.for(:sign_up) << [:role]
-  #   resource.save
-  #   yield resource if block_given?
+     #:type = :role
+  #   devise_parameter_sanitizer.for(:sign_up) << [:role, :type]
   #   if resource.persisted?
   #     if resource.active_for_authentication?
   #       set_flash_message :notice, :signed_up if is_flashing_format?
@@ -44,6 +43,9 @@ class User::RegistrationsController < Devise::RegistrationsController
   #     set_minimum_password_length
   #     respond_with resource
   #   end
+
+  #  binding.pry
+
   # end
 
   # # GET /resource/edit

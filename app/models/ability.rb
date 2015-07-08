@@ -61,6 +61,9 @@ class Ability
         s.try(:user) == current_user || current_user.role = "volunteer"
       end
 
+    elsif current_user.role == "scientist"
+      cannot :create, User
+      can :read, :all
 
     else
       can :create, Tsighting
