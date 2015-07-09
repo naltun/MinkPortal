@@ -16,20 +16,20 @@ class AddFieldsToUsers < ActiveRecord::Migration
     add_column :users, :monitor, :boolean
     add_column :users, :trapper, :boolean
     add_column :users, :dispatcher, :boolean
-    add_column :users, :land_owner, :boolean
+    add_column :users, :landowner, :boolean
     add_column :users, :peer, :boolean
     add_column :users, :num_of_rafts_given, :integer
     add_column :users, :num_of_traps_given, :integer
-    add_column :users, :owned_traps, :boolean
+    add_column :users, :own_traps, :boolean
     add_column :users, :second_organisation, :string
     add_column :users, :start_date, :date
     add_column :users, :end_date, :date
     add_column :users, :newsletter, :boolean
-    add_column :users, :owned_carcass_storage, :boolean
+    add_column :users, :own_carcass_storage, :boolean
     add_column :users, :how_heard_of_smi, :string
     add_column :users, :comments, :text
     add_column :users, :estate_name, :string
-    add_column :users, :land_access_nodes, :text
+    add_column :users, :land_access_notes, :text
     add_column :users, :access_granted, :boolean
     add_column :users, :date_access_granted, :date
     add_column :users, :end_date_access, :date
