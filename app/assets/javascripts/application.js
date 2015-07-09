@@ -18,6 +18,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require pickers
+//= require jquery-ui/tabs
 
 $(function(){ $(document).foundation(); });
 $("input.date_picker").datepicker();

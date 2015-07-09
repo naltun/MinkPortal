@@ -15,3 +15,6 @@
  *= require foundation_and_overrides
 *= require bootstrap-datetimepicker
  */
+/*
+ *= require jquery-ui/tabs
+ */
