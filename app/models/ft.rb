@@ -1,3 +1,0 @@
-class Ft < User
-	
-end

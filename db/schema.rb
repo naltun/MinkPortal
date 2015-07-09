@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701171223) do
+ActiveRecord::Schema.define(version: 20150709150136) do
 
   create_table "scientists", force: :cascade do |t|
     t.string   "first_name"
@@ -62,7 +62,41 @@ ActiveRecord::Schema.define(version: 20150701171223) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "role"
-    t.string   "type"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "fishery_trust_name"
+    t.string   "contact_code"
+    t.string   "organisation"
+    t.string   "role_in_org"
+    t.string   "phone_landline"
+    t.string   "phone_mobile"
+    t.string   "street_address"
+    t.string   "postocde"
+    t.string   "city"
+    t.boolean  "forms_signed"
+    t.boolean  "report_sightings"
+    t.boolean  "monitor"
+    t.boolean  "trapper"
+    t.boolean  "dispatcher"
+    t.boolean  "land_owner"
+    t.boolean  "peer"
+    t.integer  "num_of_rafts_given"
+    t.integer  "num_of_traps_given"
+    t.boolean  "owned_traps"
+    t.string   "second_organisation"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.boolean  "newsletter"
+    t.boolean  "owned_carcass_storage"
+    t.string   "how_heard_of_smi"
+    t.text     "comments"
+    t.string   "estate_name"
+    t.text     "land_access_nodes"
+    t.boolean  "access_granted"
+    t.date     "date_access_granted"
+    t.date     "end_date_access"
+    t.boolean  "share_data"
+    t.string   "trap_codes"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
