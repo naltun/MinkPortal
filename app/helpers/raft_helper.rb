@@ -1,0 +1,2 @@
+module RaftHelper
+end

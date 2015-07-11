@@ -1,0 +1,2 @@
+class RaftController < ApplicationController
+end

@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709150136) do
+ActiveRecord::Schema.define(version: 20150711104856) do
+
+  create_table "rafts", force: :cascade do |t|
+    t.string   "x_cord"
+    t.string   "y_cord"
+    t.string   "river"
+    t.string   "catchment"
+    t.date     "start_date"
+    t.string   "raft_code"
+    t.string   "raft_or_tunnel"
+    t.date     "status_change_date"
+    t.string   "raft_status"
+    t.string   "contact_code"
+    t.string   "organisation"
+    t.string   "landowner_contact_code"
+    t.string   "dispatcher_contact_code"
+    t.text     "access_notes"
+    t.text     "comments"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "scientists", force: :cascade do |t|
     t.string   "first_name"
