@@ -22,6 +22,10 @@ class User::RegistrationsController < Devise::RegistrationsController
     end
    end
 
+   def index
+     @users = User.all
+   end 
+
   # # POST /resource
   # def create
   #   build_resource(sign_up_params)
