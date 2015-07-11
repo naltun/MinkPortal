@@ -50,9 +50,9 @@ class Ability
       end
       can :create, Raft
       can :update, Raft do |u|
-        u.try(:user) == current_user || current_user.role = "ft"
+        u.try(:created_by) == current_user || current_user.role = "ft"
       end
-      
+
     elsif current_user.role == "volunteer"
       cannot :create, User
       can :read, Tsighting do |s|
