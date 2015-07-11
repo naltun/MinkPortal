@@ -79,24 +79,23 @@ function toggleFields() {
         <%= f.input :peer, as: :boolean, checked_value: true, unchecked_value: false %>
         <%= f.input :num_of_rafts_given %>
         <%= f.input :num_of_traps_given %>
-        <%= f.input :owned_traps, as: :boolean, checked_value: true, unchecked_value: false %>  
-        <%= f.input :second_organisation %>
-        <%= f.input :start_date, as: :date_picker %>
+        <%= f.input :owned_traps, as: :boolean, checked_value: true, unchecked_value: false, required: true %>  
+        <%= f.input :second_organisation, required: true %>
+        <%= f.input :start_date, as: :date_picker, required: true %>
         <%= f.input :end_date, as: :date_picker %>
-        <%= f.input :newsletter %>
+        <%= f.input :newsletter, required: true %>
         <%= f.input :owned_carcass_storage, as: :boolean, checked_value: true, unchecked_value: false, required: true %>
-        <%= f.input :how_heard_of_smi, as: :string %>
+        <%= f.input :how_heard_of_smi, as: :string, required: true %>
         <%= f.input :comments, as: :text %>
         <!-- These are only activated if landowner field is checked (aka, true) -->
-        <% if :land_owner == :true %>
-          <%= f.input :estate_name %>
-          <%= f.input :land_access_nodes, as: :text %>
-          <%= f.input :access_granted, as: :boolean, checked_value: true, unchecked_value: false, required: true %>
-          <%= f.input :date_access_granted, as: :date_picker %>
-          <%= f.input :end_date_access, as: :date_picker %>
-          <%= f.input :share_data, as: :boolean, checked_value: true, unchecked_value: false, required: true %>
-          <%= f.input :trap_codes, as: :string %>
-        <% end %>
+        <%= f.input :estate_name %>
+        <%= f.input :land_access_nodes, as: :text %>
+        <%= f.input :access_granted, as: :boolean, checked_value: true, unchecked_value: false, required: true %>
+        <%= f.input :date_access_granted, as: :date_picker %>
+        <%= f.input :end_date_access, as: :date_picker %>
+        <!-- 'share_data' will be required -->
+        <%= f.input :share_data, as: :boolean, checked_value: true, unchecked_value: false %>
+        <%= f.input :trap_codes, as: :string %>
         <% f.input :role, :as => :hidden, :input_html => { :value => "volunteer" } %>
 
       </div>
