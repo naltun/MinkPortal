@@ -17,7 +17,8 @@
     <%= f.input :dispatcher_contact_code %>
     <%= f.input :access_notes %>
     <%= f.input :comments %>
-    <%= f.input :created_by %>
+    <% f.input :created_by, :as => :hidden, :input_html => { :value => current_user.email } %>
+
   </div>
 
   <div class="form-actions">
