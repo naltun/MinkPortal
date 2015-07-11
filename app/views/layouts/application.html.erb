@@ -41,11 +41,13 @@
         <li class="active"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
         <% if can? :manage, :all %>
           <li class="active"><%= link_to 'Create a user', new_user_registration_path, :method => :new %></li>
-
         <% end %>
       <% else %>
         <li class="active"><%= link_to "Sign in", new_user_session_path %></li>
       <% end %>
+    <% if can? :create, :raft%>
+      <li class="active"><%= link_to 'Create a raft', new_raft_path, :method => :new %></li>
+    <% end %>
     </ul>
   </section>
 </nav>

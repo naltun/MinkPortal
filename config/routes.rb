@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :rafts
+
   devise_for :users, :controllers => {:registrations => "user/registrations" }
   resources :tsightings
   #resources :test_sightings

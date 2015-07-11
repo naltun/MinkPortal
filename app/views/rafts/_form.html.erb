@@ -1,0 +1,26 @@
+<%= simple_form_for(@raft) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :x_cord %>
+    <%= f.input :y_cord %>
+    <%= f.input :river %>
+    <%= f.input :catchment %>
+    <%= f.input :start_date %>
+    <%= f.input :raft_code %>
+    <%= f.input :raft_or_tunnel %>
+    <%= f.input :status_change_date %>
+    <%= f.input :raft_status %>
+    <%= f.input :contact_code %>
+    <%= f.input :organisation %>
+    <%= f.input :landowner_contact_code %>
+    <%= f.input :dispatcher_contact_code %>
+    <%= f.input :access_notes %>
+    <%= f.input :comments %>
+    <%= f.input :created_by %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

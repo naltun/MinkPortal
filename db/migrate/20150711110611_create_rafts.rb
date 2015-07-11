@@ -1,5 +1,6 @@
 class CreateRafts < ActiveRecord::Migration
   def change
+    drop_table :rafts
     create_table :rafts do |t|
       t.string :x_cord
       t.string :y_cord
@@ -16,6 +17,7 @@ class CreateRafts < ActiveRecord::Migration
       t.string :dispatcher_contact_code
       t.text :access_notes
       t.text :comments
+      t.string :created_by
 
       t.timestamps null: false
     end
