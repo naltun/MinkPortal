@@ -45,7 +45,7 @@ function toggleFields() {
         <%= f.input :email, required: true, autofocus: true %>
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
-        <% f.input :role, :as => :hidden, :input_html => { :value => "admin" } %>
+        <%= f.input :role, :as => :hidden, :input_html => { :value => "admin" } %>
       </div>
 
       <div class="form-actions">
@@ -95,7 +95,7 @@ function toggleFields() {
         <!-- 'share_data' will be required -->
         <%= f.input :share_data, as: :boolean, checked_value: true, unchecked_value: false %>
         <%= f.input :trap_codes, as: :string %>
-        <% f.input :role, :as => :hidden, :input_html => { :value => "volunteer" } %>
+        <%= f.input :role, :as => :hidden, :input_html => { :value => "volunteer" } %>
 
       </div>
 
@@ -114,7 +114,7 @@ function toggleFields() {
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
         <%= f.input :fishery_trust_name, required: true %>
-        <% f.input :role, :as => :hidden, :input_html => { :value => "ft" } %>
+        <%= f.input :role, :as => :hidden, :input_html => { :value => "ft" } %>
       </div>
 
       <div class="form-actions">
@@ -133,7 +133,8 @@ function toggleFields() {
         <%= f.input :password_confirmation, required: true %>
         <%= f.input :first_name, required: true %>
         <%= f.input :last_name, required: true %>
-        <% f.input :role, :as => :hidden, :input_html => { :value => "scientist" } %>
+        <%= f.input :role, :as => :hidden, :input_html => { :value => "scientist" } %>
+
       </div>
 
       <div class="form-actions">
