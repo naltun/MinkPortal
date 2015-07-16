@@ -1,6 +1,6 @@
 class CreateRafts < ActiveRecord::Migration
   def change
-    drop_table :rafts
+    #drop_table :rafts
     create_table :rafts do |t|
       t.string :x_cord
       t.string :y_cord
@@ -18,8 +18,10 @@ class CreateRafts < ActiveRecord::Migration
       t.text :access_notes
       t.text :comments
       t.string :created_by
-
+      #t.references :user, index: true, foreign_key: true
       t.timestamps null: false
+
     end
+      #add_index :rafts, [:user_id]
   end
 end

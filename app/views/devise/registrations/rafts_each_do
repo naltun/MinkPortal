@@ -1,0 +1,3 @@
+<%= @rafts.each do |raft| %>
+      <li><%= raft.river %></li>
+    <% end %>

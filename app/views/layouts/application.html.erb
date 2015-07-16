@@ -37,18 +37,22 @@
     <!-- Left Nav Section -->
     <ul class="left">
       <% if user_signed_in? %>
-        <p>Signed in as <%= current_user.email %>. Not you?</p>
         <li class="active"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
         <% if can? :manage, :all %>
-          <li class="active"><%= link_to 'Create a user', new_user_registration_path, :method => :new %></li>
+          <li class="active"><%= link_to 'Create a user', new_user_registration_path %></li>
         <% end %>
       <% else %>
         <li class="active"><%= link_to "Sign in", new_user_session_path %></li>
       <% end %>
     <% if can? :create, :raft%>
-      <li class="active"><%= link_to 'Create a raft', new_raft_path, :method => :new %></li>
+      <li class="active"><%= link_to 'Create a raft', new_raft_path %></li>
+    <% end %>
+    
+    <% if user_signed_in? %>
+      <p>Signed in as <%= current_user.email %>. Not you?</p>
     <% end %>
     </ul>
+
   </section>
 </nav>
 

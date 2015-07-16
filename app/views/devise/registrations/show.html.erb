@@ -1,0 +1,212 @@
+<p id="notice"><%= notice %></p>
+
+<% if @user.role == "admin" %>
+
+    <p>
+	  <strong>Email:</strong>
+	  <%= @user.email %>
+	</p>
+
+	<p>
+	  <strong>Role:</strong>
+	  <%= @user.role %>
+	</p>
+
+<% elsif @user.role == "volunteer" %>
+	<p>
+	  <strong>Email:</strong>
+	  <%= @user.email %>
+	</p>
+
+	<p>
+	  <strong>First name:</strong>
+	  <%= @user.first_name %>
+	</p>
+
+	<p>
+	  <strong>Last name:</strong>
+	  <%= @user.last_name %>
+	</p>
+
+	<p>
+	  <strong>Role:</strong>
+	  <%= @user.role %>
+	</p>
+
+	<p>
+	  <strong>Contact code:</strong>
+	  <%= @user.contact_code %>
+	</p>
+
+	<p>
+	  <strong>Organisation:</strong>
+	  <%= @user.organisation %>
+	</p>
+
+	<p>
+	  <strong>Role in organisation:</strong>
+	  <%= @user.role_in_org %>
+	</p>
+
+	<p>
+	  <strong>Forms signed?:</strong>
+	  <%= @user.forms_signed %>
+	</p>
+
+	<p>
+	  <strong>Report sightings?:</strong>
+	  <%= @user.report_sightings %>
+	</p>
+
+	<p>
+	  <strong>Monitor?:</strong>
+	  <%= @user.monitor %>
+	</p>
+
+	<p>
+	  <strong>Trapper?:</strong>
+	  <%= @user.trapper %>
+	</p>
+
+	<p>
+	  <strong>Dispatcher?:</strong>
+	  <%= @user.dispatcher %>
+	</p>
+
+	<p>
+	  <strong>Landowner?:</strong>
+	  <%= @user.land_owner %>
+	</p>
+
+	<p>
+	  <strong>Peer?:</strong>
+	  <%= @user.peer %>
+	</p>
+
+	<p>
+	  <strong>Number of rafts given:</strong>
+	  <%= @user.num_of_rafts_given %>
+	</p>
+
+	<p>
+	  <strong>Number of traps given:</strong>
+	  <%= @user.num_of_traps_given %>
+	</p>
+
+	<p>
+	  <strong>Owned traps?:</strong>
+	  <%= @user.owned_traps %>
+	</p>
+
+	<p>
+	  <strong>2nd organisation:</strong>
+	  <%= @user.second_organisation %>
+	</p>
+
+	<p>
+	  <strong>Start date:</strong>
+	  <%= @user.start_date %>
+	</p>
+
+	<p>
+	  <strong>End date:</strong>
+	  <%= @user.end_date %>
+	</p>
+
+	<p>
+	  <strong>Newsletter?:</strong>
+	  <%= @user.newsletter %>
+	</p>
+
+	<p>
+	  <strong>Owned carcass storage?:</strong>
+	  <%= @user.owned_carcass_storage %>
+	</p>
+
+	<p>
+	  <strong>How hear of SMI?:</strong>
+	  <%= @user.how_heard_of_smi %>
+	</p>
+
+	<ul>
+	
+    </ul>
+ 
+
+	<% if @user.land_owner == true %>
+		<p>
+		  <strong>Estate name:</strong>
+		  <%= @user.estate_name %>
+		</p>
+
+		<p>
+		  <strong>Land access notes:</strong>
+		  <%= @user.land_access_nodes %>
+		</p>
+
+		<p>
+		  <strong>Access granted?:</strong>
+		  <%= @user.access_granted %>
+		</p>
+
+		<p>
+		  <strong>Date access granted:</strong>
+		  <%= @user.date_access_granted %>
+		</p>
+
+		<p>
+		  <strong>End date access:</strong>
+		  <%= @user.end_date_access %>
+		</p>
+
+		<p>
+		  <strong>Trap codes:</strong>
+		  <%= @user.trap_codes %>
+		</p>
+
+	<% else %>
+	<% end  %>
+
+  <% elsif @user.role == "ft" %>
+
+    <p>
+	  <strong>Email:</strong>
+	  <%= @user.email %>
+	</p>
+
+	<p>
+	  <strong>Fishery Trust Name:</strong>
+	  <%= @user.fishery_trust_name %>
+	</p>
+
+	<p>
+	  <strong>Role:</strong>
+	  <%= @user.role %>
+	</p>
+      
+  <% elsif @user.role == "scientist" %>
+    
+    <p>
+	  <strong>Email:</strong>
+	  <%= @user.email %>
+	</p>
+
+	<p>
+	  <strong>First name:</strong>
+	  <%= @user.first_name %>
+	</p>
+
+	<p>
+	  <strong>Last name:</strong>
+	  <%= @user.last_name %>
+	</p>
+
+	<p>
+	  <strong>Role:</strong>
+	  <%= @user.role %>
+	</p>
+
+  <% else %>
+
+  <% end %>
+

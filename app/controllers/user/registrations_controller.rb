@@ -26,6 +26,13 @@ class User::RegistrationsController < Devise::RegistrationsController
      @users = User.all
    end 
 
+   def show
+    @user = User.find(params[:id])
+    #@rafts = @user.rafts
+    #binding.pry
+    #@rafts = Raft.where(:user_id => current_user.id)
+   end
+
   # # POST /resource
   # def create
   #   build_resource(sign_up_params)

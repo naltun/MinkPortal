@@ -2,30 +2,35 @@
 
 <h1>Listing Rafts</h1>
 
-<table>
+table>
   <thead>
     <tr>
       <th>X cord</th>
       <th>Y cord</th>
-      
+      <th>River</th>
+      <th>Catchment</th>
+      <th>Start date</th>
+      <th>Raft code</th>
+      <th>Raft or tunnel</th>
+      <th>Status change date</th>
+      <th>Raft status</th>
+      <th>Contact code</th>
+      <th>Organisation</th>
+      <th>Landowner contact code</th>
+      <th>Dispatcher contact code</th>
+      <th>Access notes</th>
+      <th>Comments</th>
+      <th>Created by</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        
-       <!--  <td><%= link_to 'Show', raft %></td>
-        <td><%= link_to 'Edit', edit_raft_path(raft) %></td>
-        <td><%= link_to 'Destroy', raft, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
-    <% end %>
+    
   </tbody>
 </table>
 
 <br>
+<br>
 
-<%= link_to 'New Raft', new_raft_path %>
+
