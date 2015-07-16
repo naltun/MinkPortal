@@ -7,20 +7,20 @@ class User::RegistrationsController < Devise::RegistrationsController
   #prepend_before_filter :authenticate_scope!, only: [:edit, :update, :new, :create]
 
   # GET /resource/sign_up
-   def new
-    if current_user == nil
-      redirect_to root_path, :alert => 'Access Denied'
-    else
-        if (current_user.role == "volunteer") or (current_user.role == nil)
-          redirect_to root_path, :alert => 'Access Denied'
-        else
-         build_resource({})
-         set_minimum_password_length
-         yield resource if block_given?
-         respond_with self.resource
-        end
-    end
-   end
+   # def new
+   #  if current_user == nil
+   #    #redirect_to root_path, :alert => 'Access Denied'
+   #  else
+   #      if (current_user.role == "volunteer") or (current_user.role == nil)
+   #        redirect_to root_path, :alert => 'Access Denied'
+   #      else
+   #       build_resource({})
+   #       set_minimum_password_length
+   #       yield resource if block_given?
+   #       respond_with self.resource
+   #      end
+   #  end
+   # end
 
    def index
      @users = User.all
