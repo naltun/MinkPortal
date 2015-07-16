@@ -8,19 +8,18 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
    def new
-    # if current_user == nil
-    #   #redirect_to root_path, :alert => 'Access Denied'
-    # else
-    #     if (current_user.role == "volunteer") or (current_user.role == nil)
-    #       redirect_to root_path, :alert => 'Access Denied'
-    #     else
-    #      build_resource({})
-    #      set_minimum_password_length
-    #      yield resource if block_given?
-    #      respond_with self.resource
-    #     end
-    # end
-    super
+    if current_user == nil
+      #redirect_to root_path, :alert => 'Access Denied'
+    else
+        if (current_user.role == "volunteer") or (current_user.role == nil)
+          redirect_to root_path, :alert => 'Access Denied'
+        else
+         build_resource({})
+         set_minimum_password_length
+         yield resource if block_given?
+         respond_with self.resource
+        end
+    end
    end
 
    def index
