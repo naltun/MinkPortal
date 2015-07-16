@@ -9,7 +9,7 @@ class User::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
    def new
     if current_user == nil
-      #redirect_to root_path, :alert => 'Access Denied'
+      redirect_to root_path, :alert => 'Access Denied'
     else
         if (current_user.role == "volunteer") or (current_user.role == nil)
           redirect_to root_path, :alert => 'Access Denied'
