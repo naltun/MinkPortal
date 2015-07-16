@@ -16,7 +16,7 @@ class AddFieldsToUsers < ActiveRecord::Migration
     add_column :users, :monitor, :boolean
     add_column :users, :trapper, :boolean
     add_column :users, :dispatcher, :boolean
-    add_column :users, :landowner, :boolean
+    add_column :users, :land_owner, :boolean
     add_column :users, :peer, :boolean
     add_column :users, :num_of_rafts_given, :integer
     add_column :users, :num_of_traps_given, :integer
