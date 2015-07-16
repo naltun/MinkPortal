@@ -35,7 +35,5 @@ class AddFieldsToUsers < ActiveRecord::Migration
     add_column :users, :end_date_access, :date
     add_column :users, :share_data, :boolean
     add_column :users, :trap_codes, :string
-
-    remove_column :users, :type
   end
 end
