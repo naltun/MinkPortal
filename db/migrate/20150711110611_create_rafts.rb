@@ -18,7 +18,7 @@ class CreateRafts < ActiveRecord::Migration
       t.text :access_notes
       t.text :comments
       t.string :created_by
-      #t.references :user, index: true, foreign_key: true
+    
       t.timestamps null: false
 
     end

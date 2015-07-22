@@ -25,6 +25,10 @@ class RaftsController < ApplicationController
   # POST /rafts.json
   def create
     @raft = Raft.new(raft_params)
+    # The following three lines replaced the one above to bind rafts to users
+    #@user = User.find(params[:user_id])
+    #@raft = @user.rafts.create(raft_params)
+    #redirect_to user_path(@user)
 
     respond_to do |format|
       if @raft.save

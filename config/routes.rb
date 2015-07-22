@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :rafts
+  # This should be added to bind the routing between these two associated resources. However, it doesn't
+  #resources :users do
+    resources :rafts
+  #end
   resources :tsightings
 
   root 'static#home'
@@ -9,6 +12,5 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "user/registrations" }
   devise_scope :user do get '/users/index', to: 'user/registrations#index' end
   devise_scope :user do get '/users/:id', to: 'user/registrations#show' end
-  	#following line still does not work - routing problem
   devise_scope :user do get '/users/sign_up', to: 'user/registrations#new' end
 end

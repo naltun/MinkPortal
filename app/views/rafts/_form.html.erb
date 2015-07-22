@@ -1,4 +1,4 @@
-<%= simple_form_for(@raft) do |f| %>
+<%= simple_form_for(@raft),  :url => {:action => :create} do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -17,6 +17,7 @@
     <%= f.input :dispatcher_contact_code %>
     <%= f.input :access_notes %>
     <%= f.input :comments %>
+    <%= f.input :user_id, as: :string %>    
     <% f.input :created_by, :as => :hidden, :input_html => { :value => current_user.email } %>
 
   </div>

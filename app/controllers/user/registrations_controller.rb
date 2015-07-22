@@ -28,9 +28,7 @@ class User::RegistrationsController < Devise::RegistrationsController
 
    def show
     @user = User.find(params[:id])
-    #@rafts = @user.rafts
-    #binding.pry
-    #@rafts = Raft.where(:user_id => current_user.id)
+    @rafts = @user.rafts
    end
 
   # # POST /resource

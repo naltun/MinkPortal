@@ -13,6 +13,7 @@
 	</p>
 
 <% elsif @user.role == "volunteer" %>
+	<%=  %>
 	<p>
 	  <strong>Email:</strong>
 	  <%= @user.email %>
@@ -123,14 +124,22 @@
 	  <%= @user.owned_carcass_storage %>
 	</p>
 
+    <%# Here, a form from _form.html.erb partial should. This form will only work if routing is resolved %>
+		
+
+
 	<p>
 	  <strong>How hear of SMI?:</strong>
 	  <%= @user.how_heard_of_smi %>
 	</p>
 
 	<ul>
+		<%= @rafts.each do |raft| %>
+	      <li><%= raft.river %></li>
+	    <% end %>
 	
     </ul>
+
  
 
 	<% if @user.land_owner == true %>
