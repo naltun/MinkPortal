@@ -1,8 +1,11 @@
+# ignore
+
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <%= link_to "Sign up", new_registration_path(resource_name) %><br />
 <% end -%>
 
 
+# partial for right column
 <div class="large-2 columns">
     <h3>Login</h3>
     <p>
@@ -10,5 +13,8 @@
     </p>
     </div>
 
-
+# needed for adding a raft in a user show view
     <%= simple_form_for(@raft),  :url => {:action => :create} do |f| %>
+
+       # line for _form partial for rafts 
+    	<%= f.input :user_id, as: :string, required: true  %> 
