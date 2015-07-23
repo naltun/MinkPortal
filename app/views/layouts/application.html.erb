@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "MinkPortal Demo" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -37,19 +37,23 @@
     <!-- Left Nav Section -->
     <ul class="left">
       <% if user_signed_in? %>
-        <li class="active"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+        <li class="active"><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+        
         <% if can? :manage, :all %>
           <li class="active"><%= link_to 'Create a user', new_user_registration_path %></li>
+          <li class="active"><%= link_to 'List all sightings', tsightings_path %></li>
         <% end %>
+      
       <% else %>
-        <li class="active"><%= link_to "Sign in", new_user_session_path %></li>
+        <li class="active"><%= link_to "Log in", new_user_session_path %></li>
       <% end %>
     <% if can? :create, :raft%>
       <li class="active"><%= link_to 'Create a raft', new_raft_path %></li>
+      <li class="active"><%= link_to 'List all rafts', rafts_path %></li>
     <% end %>
     
     <% if user_signed_in? %>
-      <p>Signed in as <%= current_user.email %>. Not you?</p>
+      <p>Logged in as <%= current_user.email %></p>
     <% end %>
     </ul>
 
@@ -58,15 +62,7 @@
 
 <!-- sample navbar finishes here -->
   <div class="row">
-  <div class="large-2 columns"></div>
-    <div class="large-8 columns"><%= yield %></div>
-    <div class="large-2 columns">
-    <h3>Login</h3>
-    <p>
-       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sem arcu, vulputate eget porttitor vel, fermentum in ante. Nullam ut volutpat enim, nec venenatis nibh. Duis vehicula nibh sed libero vulputate accumsan. Nunc et augue a libero finibus interdum. Aliquam erat volutpat. Phasellus sed risus lorem. Vestibulum cursus sit amet sem vel congue. Suspendisse quis neque mattis, dapibus ex ut, posuere ante. Vestibulum hendrerit arcu sed eros tincidunt lacinia.
-    </p>
-    </div>
-
+    <div class="large-12 columns"><%= yield %></div>
   </div>
   </body>
 </html>

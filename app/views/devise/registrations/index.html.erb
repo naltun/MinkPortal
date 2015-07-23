@@ -2,7 +2,7 @@
 
 <h1>Listing Rafts</h1>
 
-table>
+<table>
   <thead>
     <tr>
       <th>X cord</th>
@@ -26,11 +26,32 @@ table>
   </thead>
 
   <tbody>
-    
+    <% @rafts.each do |raft| %>
+      <tr>
+        <td><%= raft.x_cord %></td>
+        <td><%= raft.y_cord %></td>
+        <td><%= raft.river %></td>
+        <td><%= raft.catchment %></td>
+        <td><%= raft.start_date %></td>
+        <td><%= raft.raft_code %></td>
+        <td><%= raft.raft_or_tunnel %></td>
+        <td><%= raft.status_change_date %></td>
+        <td><%= raft.raft_status %></td>
+        <td><%= raft.contact_code %></td>
+        <td><%= raft.organisation %></td>
+        <td><%= raft.landowner_contact_code %></td>
+        <td><%= raft.dispatcher_contact_code %></td>
+        <td><%= raft.access_notes %></td>
+        <td><%= raft.comments %></td>
+        <td><%= raft.created_by %></td>
+        <td><%= link_to 'Show', raft %></td>
+        <td><%= link_to 'Edit', edit_raft_path(raft) %></td>
+        <td><%= link_to 'Delete', raft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
 <br>
-<br>
 
-
+<%= link_to 'New Raft', new_raft_path %>
