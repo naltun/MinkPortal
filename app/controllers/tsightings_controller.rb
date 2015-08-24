@@ -1,11 +1,16 @@
 class TsightingsController < ApplicationController
   #before_action :set_tsighting, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
+  helper_method :sort_column, :sort_direction
 
   # GET /tsightings
   # GET /tsightings.json
   def index
-    @tsightings = Tsighting.all
+    @tsightings = Tsighting.order(sort_column + " " + sort_direction)
+    # respond_to do |format|
+    # format.html
+    # format.json { render json: ProductsDatatable.new(view_context) }
+  #end
   end
 
   # GET /tsightings/1
@@ -70,6 +75,14 @@ class TsightingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tsighting_params
-      params.require(:tsighting).permit(:x_coord, :y_coord, :date, :your_name, :contact_info, :contact_code, :reported_by, :reported_to, :catchment, :river, :no_of_minks, :status, :follow_up, :comments, :image)
+      params.require(:tsighting).permit(:x_coord, :y_coord, :sort, :date, :your_name, :contact_info, :contact_code, :reported_by, :reported_to, :catchment, :river, :no_of_minks, :status, :follow_up, :comments, :image)
+    end
+
+    def sort_column
+      Tsighting.column_names.include?(params[:sort]) ? params[:sort] : "date"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

@@ -15,7 +15,6 @@ class Tsighting < ActiveRecord::Base
                   :url  => "/assets/products/:id/:style/:basename.:extension",
                   :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
 
-	validates_attachment_presence :image
 	validates_attachment_size :image, :less_than => 5.megabytes
 	validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png', 'image/jpg']
 
@@ -27,4 +26,6 @@ class Tsighting < ActiveRecord::Base
 	    errors.add :base, "Either Your name or Contact code has to be filled in"
 	  end
 	end
+
+
 end
