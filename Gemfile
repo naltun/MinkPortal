@@ -27,8 +27,8 @@ gem 'cancancan'
 gem 'paperclip'
 
 # for browsing resource lists easily
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
-gem 'will_paginate', '3.0.pre2'
+#gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+#gem 'will_paginate', '3.0.pre2'
 
 group :development, :test do
   gem 'sqlite3',        '1.3.9'

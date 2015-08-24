@@ -43,8 +43,8 @@ function toggleFields() {
 
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
+        <%= f.input :password, :as => :hidden, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => { :value => "NoMinkBetterNews" } %>
+        <%= f.input :password_confirmation, :as => :hidden, required: true, :input_html => { :value => "NoMinkBetterNews" } %>
         <%= f.input :role, :as => :hidden, :input_html => { :value => "admin" } %>
       </div>
 
@@ -61,8 +61,8 @@ function toggleFields() {
 
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
+        <%= f.input :password, :as => :hidden, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => { :value => "NoMinkBetterNews" } %>
+        <%= f.input :password_confirmation, :as => :hidden, required: true, :input_html => { :value => "NoMinkBetterNews" } %>
         <%= f.input :first_name, required: true %>
         <%= f.input :last_name, required: true %>
         <%= f.input :contact_code, required: true %>
@@ -111,8 +111,8 @@ function toggleFields() {
 
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
+        <%= f.input :password, :as => :hidden, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => { :value => "NoMinkBetterNews" } %>
+        <%= f.input :password_confirmation, :as => :hidden, required: true, :input_html => { :value => "NoMinkBetterNews" } %>
         <%= f.input :fishery_trust_name, required: true %>
         <%= f.input :role, :as => :hidden, :input_html => { :value => "ft" } %>
       </div>
@@ -129,8 +129,8 @@ function toggleFields() {
 
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
+        <%= f.input :password, :as => :hidden, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => { :value => "NoMinkBetterNews" } %>
+        <%= f.input :password_confirmation, :as => :hidden, required: true, :input_html => { :value => "NoMinkBetterNews" } %>
         <%= f.input :first_name, required: true %>
         <%= f.input :last_name, required: true %>
         <%= f.input :role, :as => :hidden, :input_html => { :value => "scientist" } %>

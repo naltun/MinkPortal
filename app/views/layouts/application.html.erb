@@ -10,6 +10,10 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag :defaults, "rails.validations", "rails.validations.custom" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <!-- The following 3 lines were added when tabs in user creation view stopped working - might be another way to fix it though -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <%= csrf_meta_tags %>
   </head>
 
