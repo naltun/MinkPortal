@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722201153) do
+ActiveRecord::Schema.define(version: 20150824174030) do
 
   create_table "rafts", force: :cascade do |t|
     t.string   "x_cord"
@@ -72,6 +72,10 @@ ActiveRecord::Schema.define(version: 20150722201153) do
     t.string   "comments"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "contact_code"
+    t.string   "reported_by"
+    t.string   "reported_to"
+    t.string   "follow_up"
   end
 
   create_table "users", force: :cascade do |t|
