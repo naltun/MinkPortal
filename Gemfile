@@ -20,7 +20,11 @@ gem 'foundation-rails'
 gem 'thin'
 gem 'pry'
 gem 'devise'
+
+# for abilities
 gem 'cancancan'
+# for uploading images
+gem 'paperclip'
 
 group :development, :test do
   gem 'sqlite3',        '1.3.9'

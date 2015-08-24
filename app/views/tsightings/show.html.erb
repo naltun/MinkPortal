@@ -70,5 +70,14 @@
   <%= @tsighting.comments %>
 </p>
 
+<p>
+  <strong>Photo:</strong>
+  
+
+<%= image_tag @tsighting.image.url(:small) %>
+
+
+</p>
+
 <%= link_to 'Edit', edit_tsighting_path(@tsighting) %> |
 <%= link_to 'Back', tsightings_path %>

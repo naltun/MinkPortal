@@ -70,6 +70,6 @@ class TsightingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tsighting_params
-      params.require(:tsighting).permit(:x_coord, :y_coord, :date, :your_name, :contact_info, :contact_code, :reported_by, :reported_to, :catchment, :river, :no_of_minks, :status, :follow_up, :comments)
+      params.require(:tsighting).permit(:x_coord, :y_coord, :date, :your_name, :contact_info, :contact_code, :reported_by, :reported_to, :catchment, :river, :no_of_minks, :status, :follow_up, :comments, :image)
     end
 end

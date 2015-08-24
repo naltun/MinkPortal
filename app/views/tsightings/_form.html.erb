@@ -1,5 +1,5 @@
 
-<%= simple_form_for @tsighting, :validate => true do |f| %>
+<%= simple_form_for @tsighting, html: { multipart: true }, :validate => true do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -25,6 +25,7 @@ $(document).init();</script>
     <%= f.input :no_of_minks, :collection => 1..10, label: "No of mink" %>
     <%= f.input :status, :collection => ["Dead", "Alive"] %>
     <%= f.select :follow_up, ["Raft deployed", "Nearby volunteers notified", "Quick response activated", "New volunteer sought for new raft", "No action taken"], label: "Follow up" %>
+    <%= f.input :image, as: :file, label: "Photo" %>
     <%= f.input :comments, as: :text %>
   </div>
 

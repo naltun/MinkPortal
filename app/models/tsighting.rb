@@ -11,7 +11,15 @@ class Tsighting < ActiveRecord::Base
 	validates :status, presence: true
   	validates :reported_by, presence: true
 
+  	has_attached_file :image, :styles => { :small => "150x150>" },
+                  :url  => "/assets/products/:id/:style/:basename.:extension",
+                  :path => ":rails_root/public/assets/products/:id/:style/:basename.:extension"
 
+	validates_attachment_presence :image
+	validates_attachment_size :image, :less_than => 5.megabytes
+	validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png', 'image/jpg']
+
+  	#following allows for either contact code or your name to be blank
   	validate :any_present?
 
 	def any_present?
