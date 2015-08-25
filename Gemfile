@@ -6,7 +6,7 @@ gem 'rails', '4.2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
+gem 'jquery-rails' 
 gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
@@ -20,7 +20,15 @@ gem 'foundation-rails'
 gem 'thin'
 gem 'pry'
 gem 'devise'
+
+# for abilities
 gem 'cancancan'
+# for uploading images
+gem 'paperclip'
+
+# for browsing resource lists easily
+#gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+#gem 'will_paginate', '3.0.pre2'
 
 group :development, :test do
   gem 'sqlite3',        '1.3.9'

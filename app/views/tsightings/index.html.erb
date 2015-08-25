@@ -2,19 +2,23 @@
 
 <h1>Listing Sightings</h1>
 
-<table>
+<table id="tsightings" data-source="<%= tsightings_url(format: "json") %>">
   <thead>
     <tr>
-      <th>X coord</th>
-      <th>Y coord</th>
-      <th>Date</th>
-      <th>Your name</th>
-      <th>Contact info</th>
-      <th>Catchment</th>
-      <th>River</th>
-      <th>No of minks</th>
-      <th>Status</th>
-      <th>Comments</th>
+      <th><%= sortable "x_coord" %></th>
+      <th><%= sortable "y_coord" %></th>
+      <th><%= sortable "date" %></th>
+      <th><%= sortable "contact_code" %></th>
+      <th><%= sortable "your_name" %></th>
+      <th><%= sortable "contact_info" %></th>
+      <th><%= sortable "reported_by" %></th>
+      <th><%= sortable "Reported_to" %></th>
+      <th><%= sortable "catchment" %></th>
+      <th><%= sortable "river" %></th>
+      <th><%= sortable "no_of_minks" %></th>
+      <th><%= sortable "status" %></th>
+      <th><%= sortable "follow_up" %></th>
+      <th><%= sortable "comments" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,12 +29,16 @@
         <td><%= tsighting.x_coord %></td>
         <td><%= tsighting.y_coord %></td>
         <td><%= tsighting.date %></td>
+        <td><%= tsighting.contact_code %></td>
         <td><%= tsighting.your_name %></td>
         <td><%= tsighting.contact_info %></td>
+        <td><%= tsighting.reported_by %></td>
+        <td><%= tsighting.reported_to %></td>
         <td><%= tsighting.catchment %></td>
         <td><%= tsighting.river %></td>
         <td><%= tsighting.no_of_minks %></td>
         <td><%= tsighting.status %></td>
+        <td><%= tsighting.follow_up %></td>
         <td><%= tsighting.comments %></td>
         <td><%= link_to 'Show', tsighting %></td>
         <% if can? :manage, :all %>

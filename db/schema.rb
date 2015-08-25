@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722201153) do
+ActiveRecord::Schema.define(version: 20150824184028) do
 
   create_table "rafts", force: :cascade do |t|
     t.string   "x_cord"
@@ -70,8 +70,16 @@ ActiveRecord::Schema.define(version: 20150722201153) do
     t.string   "no_of_minks"
     t.string   "status"
     t.string   "comments"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "contact_code"
+    t.string   "reported_by"
+    t.string   "reported_to"
+    t.string   "follow_up"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

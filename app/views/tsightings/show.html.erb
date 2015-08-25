@@ -16,6 +16,11 @@
 </p>
 
 <p>
+  <strong>Contact code:</strong>
+  <%= @tsighting.contact_code %>
+</p>
+
+<p>
   <strong>Your name:</strong>
   <%= @tsighting.your_name %>
 </p>
@@ -23,6 +28,16 @@
 <p>
   <strong>Contact info:</strong>
   <%= @tsighting.contact_info %>
+</p>
+
+<p>
+  <strong>Reported by:</strong>
+  <%= @tsighting.reported_by %>
+</p>
+
+<p>
+  <strong>Reported to:</strong>
+  <%= @tsighting.reported_to %>
 </p>
 
 <p>
@@ -46,8 +61,18 @@
 </p>
 
 <p>
+  <strong>Follow up:</strong>
+  <%= @tsighting.follow_up %>
+</p>
+
+<p>
   <strong>Comments:</strong>
   <%= @tsighting.comments %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @tsighting.image.url(:small) %>
 </p>
 
 <%= link_to 'Edit', edit_tsighting_path(@tsighting) %> |
