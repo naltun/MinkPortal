@@ -67,7 +67,7 @@ function toggleFields() {
         <%= f.input :last_name, required: true %>
         <%= f.input :contact_code, required: true %>
         <%= f.input :organisation %>
-        <%= f.input :role_in_org %>
+        <%= f.input :role_in_org, label: "Role in organisation" %>
         <%= f.input :forms_signed, as: :boolean, checked_value: true, unchecked_value: false, required: true %>
         <%= f.input :report_sightings, as: :boolean, checked_value: true, unchecked_value: false, required: true %>
         <%= f.input :monitor, as: :boolean, checked_value: true, unchecked_value: false, required: true %>
@@ -76,15 +76,17 @@ function toggleFields() {
         <!-- Change to landowner -->
         <%= f.input :land_owner, as: :boolean, checked_value: true, unchecked_value: false, required: true %>
         <%= f.input :peer, as: :boolean, checked_value: true, unchecked_value: false %>
-        <%= f.input :num_of_rafts_given %>
-        <%= f.input :num_of_traps_given %>
-        <%= f.input :owned_traps, as: :boolean, checked_value: true, unchecked_value: false, required: true %>  
+        <%= f.input :num_of_rafts_given, input_html: { min: '0', step: 'any' }%>
+        <%= f.input :num_of_traps_given, input_html: { min: '0', step: 'any' }%>
+        <!-- Here, a list of user's associated traps should be shown-->
+        <%= f.input :trap_codes, as: :string %>
+        <%= f.input :owned_traps, as: :boolean, checked_value: true, unchecked_value: false, required: true, label: "Own traps" %>  
         <%= f.input :second_organisation, required: true %>
-        <%= f.input :start_date, as: :date_picker, required: true %>
-        <%= f.input :end_date, as: :date_picker %>
+        <%= f.input :start_date, as: :date_picker, label: "Start date (Press blue button below to pick or type date)", input_html: { id: 'adjusted_inputtext' }, required: true %>
+        <%= f.input :end_date, as: :date_picker, label: "End date (Press blue button below to pick or type date)", input_html: { id: 'adjusted_inputtext' } %>
         <%= f.input :newsletter, required: true %>
-        <%= f.input :owned_carcass_storage, as: :boolean, checked_value: true, unchecked_value: false, required: true %>
-        <%= f.input :how_heard_of_smi, as: :string, required: true %>
+        <%= f.input :owned_carcass_storage, as: :boolean, checked_value: true, unchecked_value: false, required: true, label: "Access to carcass storage" %>
+        <%= f.select :how_heard_of_smi, ["Word of mouth", "At an event", "Internet search", "Saw a raft", "Pre SMI volunteer", "Member of RAFTS", "SMI newsletter", "SMI website", "SMI presentation", "SMI leaflet", "SMI poster", "SMI approached them", "Other"], label: "How did they hear about SMI?", required: true %>
         <%= f.input :comments, as: :text %>
         <!-- These are only activated if landowner field is checked (aka, true) -->
         <%= f.input :estate_name %>
@@ -94,7 +96,6 @@ function toggleFields() {
         <%= f.input :end_date_access, as: :date_picker %>
         <!-- 'share_data' will be required -->
         <%= f.input :share_data, as: :boolean, checked_value: true, unchecked_value: false %>
-        <%= f.input :trap_codes, as: :string %>
         <%= f.input :role, :as => :hidden, :input_html => { :value => "volunteer" } %>
 
       </div>
