@@ -7,7 +7,7 @@
 
 <p>
   <strong>Y Coord:</strong>
-  <%= @raft.y_cord %>
+  <%= @raft.y_coord %>
 </p>
 
 <p>
@@ -31,7 +31,7 @@
 </p>
 
 <p>
-  <strong>Raft/Tunnel/Trap</strong>
+  <strong>Raft/Tunnel/Trap:</strong>
   <%= @raft.raft_or_tunnel %>
 </p>
 
@@ -52,7 +52,7 @@
 
 <p>
   <strong>Organisation:</strong>
-  <%= @raft.coordination_org %>
+  <%= @raft.coordinating_org %>
 </p>
 
 <p>
@@ -78,6 +78,11 @@
 <p>
   <strong>Created by:</strong>
   <%= @raft.created_by %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @raft.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_raft_path(@raft) %> |
