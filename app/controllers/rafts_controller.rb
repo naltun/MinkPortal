@@ -1,10 +1,12 @@
 class RaftsController < ApplicationController
   before_action :set_raft, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
 
   # GET /rafts
   # GET /rafts.json
   def index
-    @rafts = Raft.all
+    #@rafts = Raft.all
+    @rafts = Raft.order(sort_column + " " + sort_direction)
   end
 
   # GET /rafts/1
@@ -73,6 +75,14 @@ class RaftsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def raft_params
-      params.require(:raft).permit(:x_cord, :y_cord, :river, :catchment, :start_date, :raft_code, :raft_or_tunnel, :status_change_date, :raft_status, :contact_code, :organisation, :landowner_contact_code, :dispatcher_contact_code, :access_notes, :comments, :created_by)
+      params.require(:raft).permit(:x_coord, :y_coord, :river, :catchment, :start_date, :raft_code, :raft_or_tunnel, :status_change_date, :raft_status, :contact_code, :coordinating_org, :landowner_contact_code, :dispatcher_contact_code, :access_notes, :comments, :created_by)
+    end
+
+    def sort_column
+      Raft.column_names.include?(params[:sort]) ? params[:sort] : "river"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

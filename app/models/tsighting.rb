@@ -7,7 +7,7 @@ class Tsighting < ActiveRecord::Base
 	#validates :your_name, presence: true
 	validates :contact_info, presence: true
 	validates :river, presence: true
-	validates :no_of_minks, presence: true
+	validates :no_of_mink, presence: true
 	validates :status, presence: true
   	validates :reported_by, presence: true
 

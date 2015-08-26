@@ -2,17 +2,17 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :x_cord, required: true, label: "X Coord"  %>
-    <%= f.input :y_cord, required: true, label: "Y Coord"  %>
+    <%= f.input :x_coord, required: true, label: "X Coord"  %>
+    <%= f.input :y_coord, required: true, label: "Y Coord"  %>
     <%= f.input :river, required: true  %>
     <%= f.select :catchment, ["Alness", "Assynt", "Balnagown", "Benholm", "Bervie", "Bogie", "Boyne", "Brothock", "Cape Wrath", "Colgach", "Conon", "Dee", "Deveron", "Dochart", "Cromarty Firth", "Don", "Dour", "Ericht", "Findhorn", "Fleet & Brora", "Forth - Allan Water", "Forth - Almond", "Forth - Avon", "Forth Beil Water", "Forth - Black Devon", "Forth - Carron", "Forth - Deveon", "Forth - Esk", "Forth - Leven", "Forth - Teith", "Forth - Tyne", "Forth - Water of Leith", "Forth - Fife Coastal", "Forth - East Lothian Costal", "Gardenstown", "Garry", "Gruinard", "Isla", "Isla (Deveron)", "Kylesku", "Loch Earn", "Lossie", "Lunan Water", "Moray Firth","Nairn", "Naver", "Ness & Beauty", "Oykel & Kyle of Sutherland", "North Esk", "South Esk", "Runie", "Spey", "Stonehaven & Porthelen", "Strathbeg & Coastal", "Tay", "Troup", "Tummel", "Ugie", "Water of Cruden & Coastal", "Water of Philorth", "Ythan", "Other"] %>
-    <%= f.input :start_date , as: :date_picker%>
+    <%= f.input :start_date , as: :date_picker %>
     <%= f.input :raft_code, required: true  %>
     <%= f.input :raft_or_tunnel, required: true, label: "Raft/Tunnel/Trap"  %>
     <%= f.input :status_change_date, as: :date_picker %>
     <%= f.input :raft_status, required: true  %>
     <%= f.input :contact_code, required: true  %>
-    <%= f.select :organisation, ["CFFT", "DBIFT", "ERFT", "FNLFT", "LLTNP", "NBFT", "North Tay", "RDeeFT", "RDonFT", "RFFT", "SF", "WRFT", "WSFT"], label: "Coordinating organisation:", required: true %>
+    <%= f.input :coordinating_org, :collection =>  ["CFFT", "DBIFT", "ERFT", "FNLFT", "LLTNP", "NBFT", "North Tay", "RDeeFT", "RDonFT", "RFFT", "SF", "WRFT", "WSFT"], label: "Coordinating organisation:", required: true %>
     <%= f.input :landowner_contact_code %>
     <%= f.input :dispatcher_contact_code, required: true  %>
     <%= f.input :access_notes %>

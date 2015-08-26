@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_devise_permitted_parameters
-    registration_params = [:email, :password, :password_confirmation, :role, :first_name, :last_name, :fishery_trust_name, :contact_code, :organisation, :role_in_org, :phone_landline, :phone_mobile, :street_address, :postcode, :city, :forms_signed, :report_sightings, :monitor, :trapper, :dispatcher, :landowner, :peer, :num_of_rafts_given, :num_of_traps_given, :own_traps, :second_organisation, :start_date, :end_date, :newsletter, :own_carcass_storage, :how_heard_of_smi, :comments, :estate_name, :land_access_notes, :access_granted, :date_access_granted, :end_date_access, :share_data, :trap_codes]
+    registration_params = [:email, :password, :password_confirmation, :role, :first_name, :last_name, :fishery_trust_name, :contact_code, :organisation, :role_in_org, :phone_landline, :phone_mobile, :street_address, :postcode, :city, :forms_signed, :report_sightings, :receives_newsletter_only, :monitor, :trapper, :dispatcher, :landowner, :peer, :num_of_rafts_given, :num_of_traps_given, :own_traps, :coordinating_org, :start_date, :end_date, :newsletter, :own_carcass_storage, :how_heard_of_smi, :comments, :estate_name, :land_access_notes, :access_granted, :date_access_granted, :end_date_access, :share_data, :trap_codes]
 
     if params[:action] == 'update'
       devise_parameter_sanitizer.for(:account_update) { 
