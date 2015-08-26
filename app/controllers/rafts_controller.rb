@@ -29,8 +29,10 @@ class RaftsController < ApplicationController
     @raft = Raft.new(raft_params)
     # The following three lines replaced the one above to bind rafts to users
     #@user = User.find(params[:user_id])
-    #@raft = @user.rafts.create(raft_params)
+    #@raft = @user.rafts.create(ra ft_params)
     #redirect_to user_path(@user)
+
+    puts @raft.to_s
 
     respond_to do |format|
       if @raft.save
@@ -76,7 +78,7 @@ class RaftsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def raft_params
       # note, are you using created_by or user for this?
-      params.require(:raft).permit(:x_coord, :y_coord, :river, :catchment, :start_date, :raft_code, :raft_or_tunnel, :status_change_date, :raft_status, :contact_code, :coordinating_org, :landowner_contact_code, :dispatcher_contact_code, :access_notes, :comments, :created_by).merge(created_by: current_user).merge(user: current_user)
+      params.require(:raft).permit(:x_coord, :y_coord, :river, :catchment, :start_date, :raft_code, :raft_or_tunnel, :status_change_date, :raft_status, :contact_code, :coordinating_org, :landowner_contact_code, :dispatcher_contact_code, :access_notes, :comments, :created_by)
 
       #old version
       #params.require(:raft).permit(:x_coord, :y_coord, :river, :catchment, :start_date, :raft_code, :raft_or_tunnel, :status_change_date, :raft_status, :contact_code, :coordinating_org, :landowner_contact_code, :dispatcher_contact_code, :access_notes, :comments, :created_by)
