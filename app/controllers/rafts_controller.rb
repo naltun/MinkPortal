@@ -73,6 +73,11 @@ class RaftsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def raft_params
-      params.require(:raft).permit(:x_cord, :y_cord, :river, :catchment, :start_date, :raft_code, :raft_or_tunnel, :status_change_date, :raft_status, :contact_code, :organisation, :landowner_contact_code, :dispatcher_contact_code, :access_notes, :comments, :created_by)
+      # note, are you using created_by or user for this?
+      params
+        .require(:raft)
+        .permit(:x_cord, :y_cord, :river, :catchment, :start_date, :raft_code, :raft_or_tunnel, :status_change_date, :raft_status, :contact_code, :organisation, :landowner_contact_code, :dispatcher_contact_code, :access_notes, :comments, :created_by)
+        .merge(created_by: current_user)
+        .merge(user: current_user)
     end
 end

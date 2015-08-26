@@ -1,7 +1,7 @@
 class Raft < ActiveRecord::Base
-	belongs_to :user
-	validates :x_cord, presence: true
-	validates :y_cord, presence: true
+    belongs_to :user
+    validates :x_cord, presence: true
+    validates :y_cord, presence: true
     validates :river, presence: true
     validates :catchment, presence: true
     validates :start_date, presence: true
@@ -12,6 +12,5 @@ class Raft < ActiveRecord::Base
     validates :contact_code, presence: true
     validates :organisation, presence: true
     validates :dispatcher_contact_code, presence: true
-   # validates :user_id, presence: true 
-
+   # validates :user_id, presence: true
 end

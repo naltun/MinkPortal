@@ -17,9 +17,6 @@
     <%= f.input :dispatcher_contact_code, required: true  %>
     <%= f.input :access_notes %>
     <%= f.input :comments %>
-       <!-- should contain line for inputting user_id - see dump.rb in the main directory -->
-    <% f.input :created_by, :as => :hidden, :input_html => { :value => current_user.email } %>
-
   </div>
 
   <div class="form-actions">
