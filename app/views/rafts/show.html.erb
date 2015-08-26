@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>X Coord:</strong>
-  <%= @raft.x_coord %>
+  <strong>X cord:</strong>
+  <%= @raft.x_cord %>
 </p>
 
 <p>
-  <strong>Y Coord:</strong>
-  <%= @raft.y_coord %>
+  <strong>Y cord:</strong>
+  <%= @raft.y_cord %>
 </p>
 
 <p>
@@ -31,7 +31,7 @@
 </p>
 
 <p>
-  <strong>Raft/Tunnel/Trap:</strong>
+  <strong>Raft or tunnel:</strong>
   <%= @raft.raft_or_tunnel %>
 </p>
 
@@ -52,7 +52,7 @@
 
 <p>
   <strong>Organisation:</strong>
-  <%= @raft.coordinating_org %>
+  <%= @raft.organisation %>
 </p>
 
 <p>
@@ -78,11 +78,6 @@
 <p>
   <strong>Created by:</strong>
   <%= @raft.created_by %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @raft.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_raft_path(@raft) %> |
