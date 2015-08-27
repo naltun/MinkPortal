@@ -76,7 +76,7 @@
 
 	<p>
 	  <strong>Landowner?:</strong>
-	  <%= @user.land_owner %>
+	  <%= @user.landowner %>
 	</p>
 
 	<p>
@@ -96,12 +96,12 @@
 
 	<p>
 	  <strong>Owned traps?:</strong>
-	  <%= @user.owned_traps %>
+	  <%= @user.own_traps %>
 	</p>
 
 	<p>
 	  <strong>2nd organisation:</strong>
-	  <%= @user.second_organisation %>
+	  <%= @user.coordinating_org %>
 	</p>
 
 	<p>
@@ -121,7 +121,7 @@
 
 	<p>
 	  <strong>Owned carcass storage?:</strong>
-	  <%= @user.owned_carcass_storage %>
+	  <%= @user.own_carcass_storage %>
 	</p>
 
     <%# Here, a form from _form.html.erb partial should. This form will only work if routing is resolved. Also see dump.rb in the main directory %>
@@ -140,7 +140,7 @@
 
  
 
-	<% if @user.land_owner == true %>
+	<% if @user.landowner == true %>
 		<p>
 		  <strong>Estate name:</strong>
 		  <%= @user.estate_name %>
