@@ -1,8 +1,10 @@
 <script>
+  //script that shows four tabs
   $(function() {
     $( "#tabs" ).tabs();
   });
 
+  //script that shows/hides landowner fields
   $(document).ready(function(){
     $("#parent1").css("display","none");
         $(".aboveage1").click(function(){
@@ -33,6 +35,7 @@
         <%= f.input :email, required: true, autofocus: true %>
         <%= f.input :password, :as => :hidden, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => { :value => "NoMinkBetterNews" } %>
         <%= f.input :password_confirmation, :as => :hidden, required: true, :input_html => { :value => "NoMinkBetterNews" } %>
+        <%= f.input :contact_code, required: true %>
         <%= f.input :role, :as => :hidden, :input_html => { :value => "admin" } %>
       </div>
 
@@ -89,7 +92,7 @@
         <%= f.input :own_carcass_storage, as: :boolean, checked_value: true, unchecked_value: false, required: true, label: "Access to carcass storage" %>
         <%= f.input :how_heard_of_smi, :collection => ["Word of mouth", "At an event", "Internet search", "Saw a raft", "Pre SMI volunteer", "Member of RAFTS", "SMI newsletter", "SMI website", "SMI presentation", "SMI leaflet", "SMI poster", "SMI approached them", "Other"], label: "How did they hear about SMI?", required: true %>
         <%= f.input :comments, as: :text %>
-        <!-- These are only activated if landowner field is checked (aka, true) -->
+        <!-- These are only activated if landowner field is checked -->
         <div id="parent1">
         <h3>Landowner details</h3>
         <%= f.input :estate_name %>
@@ -118,6 +121,7 @@
         <%= f.input :password, :as => :hidden, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => { :value => "NoMinkBetterNews" } %>
         <%= f.input :password_confirmation, :as => :hidden, required: true, :input_html => { :value => "NoMinkBetterNews" } %>
         <%= f.input :fishery_trust_name, required: true %>
+        <%= f.input :contact_code, required: true %>
         <%= f.input :role, :as => :hidden, :input_html => { :value => "ft" } %>
       </div>
 
@@ -138,6 +142,7 @@
         <%= f.input :password_confirmation, :as => :hidden, required: true, :input_html => { :value => "NoMinkBetterNews" } %>
         <%= f.input :first_name, required: true %>
         <%= f.input :last_name, required: true %>
+        <%= f.input :contact_code, required: true %>
         <%= f.input :role, :as => :hidden, :input_html => { :value => "scientist" } %>
 
       </div>

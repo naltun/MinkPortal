@@ -2,8 +2,8 @@ class User::RegistrationsController < Devise::RegistrationsController
  
  #before_filter :configure_sign_up_params, only: [:cancel, :create]
  #before_filter :configure_account_update_params, only: [:update]
-
-  prepend_before_filter :require_no_authentication, only: [:cancel, :destroy]
+  helper_method :sort_column, :sort_direction
+  prepend_before_filter :require_no_authentication, only: [:cancel]
   #prepend_before_filter :authenticate_scope!, only: [:edit, :update, :new, :create]
 
   # GET /resource/sign_up
@@ -23,13 +23,35 @@ class User::RegistrationsController < Devise::RegistrationsController
    end
 
    def index
-     @users = User.all
+      #@users = User.all
+     @users = User.order(sort_column + " " + sort_direction)
    end 
 
    def show
     @user = User.find(params[:id])
     @rafts = @user.rafts
    end
+
+   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to '/users/index', notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+   end
+
+   
+   private
+
+     def sort_column
+        User.column_names.include?(params[:sort]) ? params[:sort] : "role"
+     end
+      
+     def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+     end
+
 
   # # POST /resource
   # def create
