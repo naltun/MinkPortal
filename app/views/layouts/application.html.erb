@@ -45,6 +45,7 @@
         
         <% if can? :manage, :all %>
           <li class="active"><%= link_to 'Create a user', new_user_registration_path %></li>
+          <li class="active"><%= link_to 'List all users', '/users/index' %></li>
           <li class="active"><%= link_to 'List all sightings', tsightings_path %></li>
         <% end %>
       

@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "user/registrations" }
   devise_scope :user do get '/users/index', to: 'user/registrations#index' end
   devise_scope :user do get '/users/:id', to: 'user/registrations#show' end
+  devise_scope :user do delete '/users/:id', to: 'user/registrations#destroy' end
   devise_scope :user do get '/users/sign_up', to: 'user/registrations#new' end
 end

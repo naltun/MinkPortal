@@ -34,7 +34,7 @@ class TsightingsController < ApplicationController
 
     respond_to do |format|
       if @tsighting.save
-        format.html { redirect_to @tsighting, notice: 'Tsighting was successfully created.' }
+        format.html { redirect_to @tsighting, notice: 'Sighting was successfully created.' }
         format.json { render :show, status: :created, location: @tsighting }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class TsightingsController < ApplicationController
   def update
     respond_to do |format|
       if @tsighting.update(tsighting_params)
-        format.html { redirect_to @tsighting, notice: 'Tsighting was successfully updated.' }
+        format.html { redirect_to @tsighting, notice: 'Sighting was successfully updated.' }
         format.json { render :show, status: :ok, location: @tsighting }
       else
         format.html { render :edit }
@@ -62,7 +62,7 @@ class TsightingsController < ApplicationController
   def destroy
     @tsighting.destroy
     respond_to do |format|
-      format.html { redirect_to tsightings_url, notice: 'Tsighting was successfully destroyed.' }
+      format.html { redirect_to tsightings_url, notice: 'Sighting was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
