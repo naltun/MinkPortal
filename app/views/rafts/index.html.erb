@@ -31,7 +31,16 @@
         <td><%= raft.coordinating_org %></td>
         <td><%= raft.landowner_contact_code %></td>
         <td><%= raft.dispatcher_contact_code %></td>
-        <td><%= raft.created_by %></td>
+        
+        <!-- lines 38-42 should link by raft.created_by to the show page for the user who created it -->
+        <!-- currently it is throwing an 'undefined method: id' error -->
+        <!-- this shouldn't occur because all users have an id -->
+        <td>
+          <a href="/users/"<% User.find_by(email: raft.created_by).id.to_s %>>
+            <%= raft.created_by %>
+          </a>
+        </td>
+        
         <td><%= link_to 'Show', raft %></td>
         <td><%= link_to 'Edit', edit_raft_path(raft) %></td>
         <td><%= link_to 'Destroy', raft, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -132,13 +132,27 @@
 	</p>
 
 	<ul>
+		
 		<%= @rafts.each do |raft| %>
-	      <li><%= raft.river %></li>
-	    <% end %>
-	
-    </ul>
+	    <li><%= raft.river %></li>
+	  <% end %>
 
- 
+   </ul>
+
+   <ul>
+   	<p>
+   		<strong>Raft Codes</strong>
+   	</p>
+   	
+   	<!-- displays raft codes of the user -->
+	  <% @rafts.each do |raft| %>
+	  	<li>
+	  		<% if raft.user_id == User.find_by(email: raft.created_by).id %>
+	  			<%= raft.contact_code %>
+	  		<% end %>
+	  	</li>
+	  <% end %>
+   </ul>
 
 	<% if @user.landowner == true %>
 		<p>
@@ -216,4 +230,3 @@
   <% else %>
 
   <% end %>
-
