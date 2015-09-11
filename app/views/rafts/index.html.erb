@@ -36,7 +36,7 @@
         <!-- currently it is throwing an 'undefined method: id' error -->
         <!-- this shouldn't occur because all users have an id -->
         <td>
-          <a href="/users/"<% User.find_by(email: raft.created_by).id.to_s %>>
+          <a href="/users/<% User.find_by(email: raft.created_by).id.to_s %>">
             <%= raft.created_by %>
           </a>
         </td>

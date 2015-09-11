@@ -47,7 +47,7 @@
 
 <p>
   <strong>Contact code:</strong>
-  <a href="/users/"<% User.find_by(email: @raft.created_by).id.to_s %>>
+  <a href="/users/<% User.find_by(email: @raft.created_by).id.to_s %>">
     <%= @raft.contact_code %>
   </a>
 </p>
