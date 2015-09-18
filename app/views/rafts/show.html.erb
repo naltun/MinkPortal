@@ -47,9 +47,7 @@
 
 <p>
   <strong>Contact code:</strong>
-  <a href="/users/<% User.find_by(email: @raft.created_by).id.to_s %>">
-    <%= @raft.contact_code %>
-  </a>
+  <%= @raft.contact_code %>
 </p>
 
 <p>
@@ -78,11 +76,9 @@
 </p>
 
 <p>
-  <strong>Created by:</strong>
-  <%= @raft.created_by %>
+  <strong>User ID:</strong>
+  <%= link_to @raft.user_id, "/users/#{@raft.user_id}" %>
 </p>
-
-
 
 <%= link_to 'Edit', edit_raft_path(@raft) %> |
 <%= link_to 'Back', rafts_path %>
