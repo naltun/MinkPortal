@@ -131,14 +131,6 @@
 	  <%= @user.how_heard_of_smi %>
 	</p>
 
-	<ul>
-		
-		<%= @rafts.each do |raft| %>
-	    <li><%= raft.river %></li>
-	  <% end %>
-
-   </ul>
-
    <ul>
    	<p>
    		<strong>Raft Codes</strong>
@@ -147,12 +139,10 @@
    	<!-- displays raft codes of the user -->
 	  <% @rafts.each do |raft| %>
 	  	<li>
-	  		<% if raft.user_id == User.find_by(email: raft.created_by).id %>
-	  			<%= raft.contact_code %>
-	  		<% end %>
+	  		<%= link_to raft.raft_code, "/rafts/#{Raft.find_by(raft_code: raft.raft_code).id}" %> 
 	  	</li>
 	  <% end %>
-   </ul>
+  </ul>
 
 	<% if @user.landowner == true %>
 		<p>
