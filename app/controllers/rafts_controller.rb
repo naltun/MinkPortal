@@ -82,12 +82,12 @@ class RaftsController < ApplicationController
 
       #old version
       #params.require(:raft).permit(:x_coord, :y_coord, :river, :catchment, :start_date, :raft_code, :raft_or_tunnel, :status_change_date, :raft_status, :contact_code, :coordinating_org, :landowner_contact_code, :dispatcher_contact_code, :access_notes, :comments, :created_by)
-    end 
-    
+    end
+
     def sort_column
       Raft.column_names.include?(params[:sort]) ? params[:sort] : "river"
     end
-    
+
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end

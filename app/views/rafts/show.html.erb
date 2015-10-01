@@ -47,7 +47,8 @@
 
 <p>
   <strong>Contact code:</strong>
-  <%= @raft.contact_code %>
+  <% id = User.find_by(contact_code: @raft.contact_code).id %>
+  <%= link_to @raft.contact_code, "/users/#{id}" %>
 </p>
 
 <p>
