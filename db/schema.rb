@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825213623) do
+ActiveRecord::Schema.define(version: 20151001122104) do
 
   create_table "rafts", force: :cascade do |t|
     t.string   "x_coord"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150825213623) do
     t.integer  "user_id"
   end
 
+  add_index "rafts", ["contact_code"], name: "index_rafts_on_contact_code"
   add_index "rafts", ["user_id"], name: "index_rafts_on_user_id"
 
   create_table "scientists", force: :cascade do |t|
