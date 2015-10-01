@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :raft_checks
+
   # This should be added to bind the routing between these two associated resources. However, it doesn't
   #resources :users do
     resources :rafts

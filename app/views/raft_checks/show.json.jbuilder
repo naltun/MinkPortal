@@ -1,0 +1,1 @@
+json.extract! @raft_check, :id, :contact_code, :raft_code, :date, :any_species, :mink, :mink_scat, :bird, :cat, :hedgehog, :mouse, :otter, :pine_marten, :rat, :squirrel, :stoat, :water_vole, :weasel, :unidentif, :comments, :created_at, :updated_at

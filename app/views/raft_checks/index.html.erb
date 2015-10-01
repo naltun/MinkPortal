@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Raft Checks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Contact code</th>
+      <th>Raft code</th>
+      <th>Date</th>
+      <th>Any species</th>
+      <th>Mink</th>
+      <th>Mink scat</th>
+      <th>Bird</th>
+      <th>Cat</th>
+      <th>Hedgehog</th>
+      <th>Mouse</th>
+      <th>Otter</th>
+      <th>Pine marten</th>
+      <th>Rat</th>
+      <th>Squirrel</th>
+      <th>Stoat</th>
+      <th>Water vole</th>
+      <th>Weasel</th>
+      <th>Unidentif</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @raft_checks.each do |raft_check| %>
+      <tr>
+        <td><%= raft_check.contact_code %></td>
+        <td><%= raft_check.raft_code %></td>
+        <td><%= raft_check.date %></td>
+        <td><%= raft_check.any_species %></td>
+        <td><%= raft_check.mink %></td>
+        <td><%= raft_check.mink_scat %></td>
+        <td><%= raft_check.bird %></td>
+        <td><%= raft_check.cat %></td>
+        <td><%= raft_check.hedgehog %></td>
+        <td><%= raft_check.mouse %></td>
+        <td><%= raft_check.otter %></td>
+        <td><%= raft_check.pine_marten %></td>
+        <td><%= raft_check.rat %></td>
+        <td><%= raft_check.squirrel %></td>
+        <td><%= raft_check.stoat %></td>
+        <td><%= raft_check.water_vole %></td>
+        <td><%= raft_check.weasel %></td>
+        <td><%= raft_check.unidentif %></td>
+        <td><%= raft_check.comments %></td>
+        <td><%= link_to 'Show', raft_check %></td>
+        <td><%= link_to 'Edit', edit_raft_check_path(raft_check) %></td>
+        <td><%= link_to 'Destroy', raft_check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Raft check', new_raft_check_path %>

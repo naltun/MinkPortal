@@ -1,0 +1,29 @@
+<%= simple_form_for(@raft_check) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :contact_code %>
+    <%= f.input :raft_code %>
+    <%= f.input :date %>
+    <%= f.input :any_species %>
+    <%= f.input :mink %>
+    <%= f.input :mink_scat %>
+    <%= f.input :bird %>
+    <%= f.input :cat %>
+    <%= f.input :hedgehog %>
+    <%= f.input :mouse %>
+    <%= f.input :otter %>
+    <%= f.input :pine_marten %>
+    <%= f.input :rat %>
+    <%= f.input :squirrel %>
+    <%= f.input :stoat %>
+    <%= f.input :water_vole %>
+    <%= f.input :weasel %>
+    <%= f.input :unidentif %>
+    <%= f.input :comments %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
