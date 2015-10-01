@@ -10,6 +10,7 @@ class RaftChecksController < ApplicationController
   # GET /raft_checks/1
   # GET /raft_checks/1.json
   def show
+    @raft_check = RaftCheck.find(params[:id])
   end
 
   # GET /raft_checks/new
@@ -69,6 +70,6 @@ class RaftChecksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def raft_check_params
-      params.require(:raft_check).permit(:contact_code, :raft_code, :date, :any_species, :mink, :mink_scat, :bird, :cat, :hedgehog, :mouse, :otter, :pine_marten, :rat, :squirrel, :stoat, :water_vole, :weasel, :unidentif, :comments)
+      params.require(:raft_check).permit(:contact_code, :raft_code, :date, :any_species, :mink, :mink_scat, :bird, :cat, :hedgehog, :mouse, :otter, :pine_marten, :rat, :squirrel, :stoat, :water_vole, :weasel, :unidentif, :comments, :raft_checks)
     end
 end

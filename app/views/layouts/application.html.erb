@@ -18,10 +18,10 @@
   </head>
 
   <body>
-  
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-  
+
 <!-- sample navbar starts here -->
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
@@ -42,21 +42,27 @@
     <ul class="left">
       <% if user_signed_in? %>
         <li class="active"><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
-        
+
         <% if can? :manage, :all %>
           <li class="active"><%= link_to 'Create a user', new_user_registration_path %></li>
           <li class="active"><%= link_to 'List all users', '/users/index' %></li>
           <li class="active"><%= link_to 'List all sightings', tsightings_path %></li>
         <% end %>
-      
+
       <% else %>
         <li class="active"><%= link_to "Log in", new_user_session_path %></li>
       <% end %>
+
     <% if can? :create, :raft%>
       <li class="active"><%= link_to 'Create a raft', new_raft_path %></li>
       <li class="active"><%= link_to 'List all rafts', rafts_path %></li>
     <% end %>
-    
+
+    <% if can? :create, :raft_check%>
+      <li class="active"><%= link_to 'Create a raft check', new_raft_check_path %></li>
+      <li class="active"><%= link_to 'List all raft checks', raft_checks_path %></li>
+    <% end %>
+
     <% if user_signed_in? %>
       <p>Logged in as <%= current_user.email %></p>
     <% end %>

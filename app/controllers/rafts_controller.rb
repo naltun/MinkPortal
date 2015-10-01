@@ -12,6 +12,9 @@ class RaftsController < ApplicationController
   # GET /rafts/1
   # GET /rafts/1.json
   def show
+    @raft = Raft.find(params[:id])
+    binding.pry
+    @raft_checks = @raft.raft_checks
   end
 
   # GET /rafts/new
