@@ -29,9 +29,11 @@
         <td><%= tsighting.status %></td>
         <td><%= tsighting.follow_up %></td>
         <td><%= link_to 'Show', tsighting %></td>
+        
         <% if can? :manage, :all %>
           <td><%= link_to 'Edit', edit_tsighting_path(tsighting) %></td>
         <% end %>
+        
         <% if can? :manage, Tsighting %>
           <td><%= link_to 'Destroy', tsighting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
