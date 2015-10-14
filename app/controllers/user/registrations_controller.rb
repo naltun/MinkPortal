@@ -2,55 +2,58 @@ class User::RegistrationsController < Devise::RegistrationsController
  
  #before_filter :configure_sign_up_params, only: [:cancel, :create]
  #before_filter :configure_account_update_params, only: [:update]
-  helper_method :sort_column, :sort_direction
-  prepend_before_filter :require_no_authentication, only: [:cancel]
-  #prepend_before_filter :authenticate_scope!, only: [:edit, :update, :new, :create]
+ helper_method :sort_column, :sort_direction
+ prepend_before_filter :require_no_authentication, only: [:cancel]
+ #prepend_before_filter :authenticate_scope!, only: [:edit, :update, :new, :create]
 
-  # GET /resource/sign_up
-   def new
-    if current_user == nil
-      redirect_to root_path, :alert => 'Access Denied'
-    else
-        if (current_user.role == "volunteer") or (current_user.role == nil)
-          redirect_to root_path, :alert => 'Access Denied'
-        else
-         build_resource({})
-         set_minimum_password_length
-         yield resource if block_given?
-         respond_with self.resource
-        end
-    end
+ # GET /resource/sign_up
+ def new
+  if current_user == nil
+   redirect_to root_path, :alert => 'Access Denied'
+  
+  else
+   if (current_user.role == "volunteer") or (current_user.role == nil)
+    redirect_to root_path, :alert => 'Access Denied'
+  
+   else
+    build_resource({})
+    set_minimum_password_length
+    yield resource if block_given?
+    respond_with self.resource
    end
+  end
+ end
 
-   def index
-      #@users = User.all
-     @users = User.order(sort_column + " " + sort_direction)
-   end 
+ def index
+  #@users = User.all
+  @users = User.order(sort_column + " " + sort_direction)
+ end 
 
-   def show
-    @user = User.find(params[:id])
-    @rafts = @user.rafts
-   end
+ def show
+  @user = User.find(params[:id])
+  @rafts = @user.rafts
+ end
 
-   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to '/users/index', notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-   end
+ def destroy
+  @user = User.find(params[:id])
+  @user.destroy
+  
+  respond_to do |format|
+    format.html { redirect_to '/users/index', notice: 'User was successfully destroyed.' }
+    format.json { head :no_content }
+  end
+ end
 
-   
-   private
+ 
+ private
 
-     def sort_column
-        User.column_names.include?(params[:sort]) ? params[:sort] : "role"
-     end
-      
-     def sort_direction
-        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-     end
+  def sort_column
+   User.column_names.include?(params[:sort]) ? params[:sort] : "role"
+  end
+    
+  def sort_direction
+   %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 
 
   # # POST /resource
