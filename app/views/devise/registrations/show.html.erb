@@ -131,18 +131,18 @@
 	  <%= @user.how_heard_of_smi %>
 	</p>
 
-   <ul>
-   	<p>
-   		<strong>Raft Codes</strong>
-   	</p>
+	<ul>
+   		<p>
+   			<strong>Raft Codes</strong>
+   		</p>
    	
-   	<!-- displays raft codes of the user -->
-	  <% @rafts.each do |raft| %>
-	  	<li>
-	  		<%= link_to raft.raft_code, "/rafts/#{Raft.find_by(raft_code: raft.raft_code).id}" %> 
-	  	</li>
-	  <% end %>
-  </ul>
+	   	<!-- displays raft codes of the user -->
+		  <% @rafts.each do |raft| %>
+		  	<li>
+		  		<%= link_to raft.raft_code, "/rafts/#{Raft.find_by(raft_code: raft.raft_code).id}" %> 
+		  	</li>
+		  <% end %>
+ 	</ul>
 
 	<% if @user.landowner == true %>
 		<p>
@@ -175,48 +175,52 @@
 		  <%= @user.trap_codes %>
 		</p>
 
+	<!-- !*!*!*!*!*!*! -->
+	<!-- the else can probably be taken out -->
+	<!-- we should check to see if this is the case -->
 	<% else %>
-	<% end  %>
-
-  <% elsif @user.role == "ft" %>
-
-    <p>
-	  <strong>Email:</strong>
-	  <%= @user.email %>
-	</p>
-
-	<p>
-	  <strong>Fishery Trust Name:</strong>
-	  <%= @user.fishery_trust_name %>
-	</p>
-
-	<p>
-	  <strong>Role:</strong>
-	  <%= @user.role %>
-	</p>
+<% end  %>
+	
+	<!-- same goes for renaming line 185's elsif to if? -->
+ 	<% elsif @user.role == "ft" %>
+	
+		<p>
+		  <strong>Email:</strong>
+		  <%= @user.email %>
+		</p>
+	
+		<p>
+		  <strong>Fishery Trust Name:</strong>
+		  <%= @user.fishery_trust_name %>
+		</p>
+	
+		<p>
+		  <strong>Role:</strong>
+		  <%= @user.role %>
+		</p>
       
-  <% elsif @user.role == "scientist" %>
+    <% elsif @user.role == "scientist" %>
     
-    <p>
-	  <strong>Email:</strong>
-	  <%= @user.email %>
-	</p>
+	    <p>
+		  <strong>Email:</strong>
+		  <%= @user.email %>
+		</p>
+	
+		<p>
+		  <strong>First name:</strong>
+		  <%= @user.first_name %>
+		</p>
+	
+		<p>
+		  <strong>Last name:</strong>
+		  <%= @user.last_name %>
+		</p>
+	
+		<p>
+		  <strong>Role:</strong>
+		  <%= @user.role %>
+		</p>
 
-	<p>
-	  <strong>First name:</strong>
-	  <%= @user.first_name %>
-	</p>
-
-	<p>
-	  <strong>Last name:</strong>
-	  <%= @user.last_name %>
-	</p>
-
-	<p>
-	  <strong>Role:</strong>
-	  <%= @user.role %>
-	</p>
-
-  <% else %>
+	<% else %>
 
   <% end %>

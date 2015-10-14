@@ -7,14 +7,14 @@
   //script that shows/hides landowner fields
   $(document).ready(function(){
     $("#parent1").css("display","none");
-        $(".aboveage1").click(function(){
+      $(".aboveage1").click(function(){
         if ($('input[id=age1]:checked').val() == "No" ) {
             $("#parent1").slideDown("fast"); //Slide Down Effect
         } else {
             $("#parent1").slideUp("fast");  //Slide Up Effect
         }
      });
-});
+  });
 </script>
 
 <h2>Create User</h2>
@@ -26,6 +26,7 @@
     <li><a href="#tabs-3">Fishery Trust</a></li>
     <li><a href="#tabs-4">Scientist</a></li>
   </ul>
+  
   <div id="tabs-1">
     <h5>Required fields are marked with *.</h5>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -47,7 +48,7 @@
   </div>
 
   <div id="tabs-2">
-  <h5>Required fields are marked with *.</h5>
+    <h5>Required fields are marked with *.</h5>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
@@ -59,6 +60,7 @@
           <div class="four columns"><%= f.input :first_name, required: true %></div>
           <div class="four columns"><%= f.input :last_name, required: true %></div>
         </div>
+        
         <%= f.input :contact_code, required: true %>
         <%= f.input :phone_landline, label: "Phone (mobile)" %>
         <%= f.input :phone_mobile, label: "Phone (landline)" %>
@@ -76,8 +78,8 @@
         <%= f.input :share_data, as: :boolean, checked_value: true, unchecked_value: false, required: true  %>
 
         <label for="age1">Landowner?</label>
-          <input type="radio" name="user[landowner]" id="age1" value="Yes" class="aboveage1" checked="checked" /> Yes
-          <input type="radio" name="user[landowner]" id="age1" value="No" class="aboveage1" /> No
+        <input type="radio" name="user[landowner]" id="age1" value="Yes" class="aboveage1" checked="checked" /> Yes
+        <input type="radio" name="user[landowner]" id="age1" value="No" class="aboveage1" /> No
         
         <%= f.input :num_of_rafts_given, input_html: { min: '0', step: 'any' }%>
         <%= f.input :num_of_traps_given, input_html: { min: '0', step: 'any' }%>
@@ -92,15 +94,17 @@
         <%= f.input :own_carcass_storage, as: :boolean, checked_value: true, unchecked_value: false, required: true, label: "Access to carcass storage" %>
         <%= f.input :how_heard_of_smi, :collection => ["Word of mouth", "At an event", "Internet search", "Saw a raft", "Pre SMI volunteer", "Member of RAFTS", "SMI newsletter", "SMI website", "SMI presentation", "SMI leaflet", "SMI poster", "SMI approached them", "Other"], label: "How did they hear about SMI?", required: true %>
         <%= f.input :comments, as: :text %>
+        
         <!-- These are only activated if landowner field is checked -->
         <div id="parent1">
-        <h3>Landowner details</h3>
-        <%= f.input :estate_name %>
-        <%= f.input :land_access_notes, as: :text %>
-        <%= f.input :access_granted, as: :boolean, checked_value: true, unchecked_value: false, required: true %>
-        <%= f.input :date_access_granted, as: :date_picker %>
-        <%= f.input :end_date_access, as: :date_picker %>
+          <h3>Landowner details</h3>
+          <%= f.input :estate_name %>
+          <%= f.input :land_access_notes, as: :text %>
+          <%= f.input :access_granted, as: :boolean, checked_value: true, unchecked_value: false, required: true %>
+          <%= f.input :date_access_granted, as: :date_picker %>
+          <%= f.input :end_date_access, as: :date_picker %>
         </div>
+        
         <%= f.input :role, :as => :hidden, :input_html => { :value => "volunteer" } %>
 
       </div>
@@ -110,9 +114,9 @@
       </div>
     <% end %>
   </div>
-
+  
   <div id="tabs-3">
-  <h5>Required fields are marked with *.</h5>
+    <h5>Required fields are marked with *.</h5>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
@@ -132,7 +136,7 @@
   </div>
 
   <div id="tabs-4">
-  <h5>Required fields are marked with *.</h5>
+    <h5>Required fields are marked with *.</h5>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
@@ -144,7 +148,6 @@
         <%= f.input :last_name, required: true %>
         <%= f.input :contact_code, required: true %>
         <%= f.input :role, :as => :hidden, :input_html => { :value => "scientist" } %>
-
       </div>
 
       <div class="form-actions">
@@ -153,4 +156,3 @@
     <% end %>     
   </div>
 </div>
-

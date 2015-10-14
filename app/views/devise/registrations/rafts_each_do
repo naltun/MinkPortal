@@ -1,3 +1,10 @@
 <%= @rafts.each do |raft| %>
-      <li><%= raft.river %></li>
-    <% end %>
+  <li><%= raft.river %></li>
+<% end %>
+
+##
+## We should see if this file can be deleted
+## I suspect that this was accidentally saved when typed into a new file (accidentally)
+##
+## Noah
+##
